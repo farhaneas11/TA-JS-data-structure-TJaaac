@@ -8,14 +8,18 @@
 
 // - A variable named `age` is predefined with value 20. Add a new key named `character-age` with the value of `age` variable i.e 20 (don't use the value 20)
 
-let age = 20;
+
 
 // - Add a new key `sur name` with the value of the surname of the character i.e "Stark". (Don't remove the space between `sur` and `name`)
 
 // - Add a new key `title` with the value title of the character i.e "Lady of Winterfell"
 
 // - Add another property named `greet` and value should be a function when called should alert `I am [NAME HERE] and my title is [TITLE HERE]`.
-
+function greet(){
+    alert(`i am ${sur name} and my title is ${title}`)
+}
+greet();
+let character ={ charactername: "arya", age: 20, sur name: "stark", title: "lady of winterfall", isfemale: true,grrt:greet() };
 // - Add a new property to the character object named `isFemale` and value will be `true`
 
 // - Execute the function stored in the greet key of the character object
