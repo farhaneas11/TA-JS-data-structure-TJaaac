@@ -3,11 +3,45 @@ let numbers = [6, 8, 10, 12, 43, 56, 98];
 let userIds = [1230, 234, 1278, 984, 763, 900];
 
 // 1. Add all the values of numbers and userIds array into the new newly created array named `collection`
-
+let collection = [6, 8, 10, 12, 43, 56, 98, 1230, 234, 1278, 984, 763, 900]; //collection =[numbers,userIds];
 // 2. Add all the even numbers from both arrays numbers and userIds into a newly created array named `evenCollection`
 
+function even(collection){
+  let evenCollection= [];
+  for(let i=0;i<collection.length;i++){
+  if(collection[i] % 2 == 0){
+    evenCollection.push(collection[i]);
+  }
+ }
+return evenCollection; 
+}
+console.log(even(collection));
+let evenCol =even(collection) ;
+console.log(evenCollection);
 // 3. Add all the odd numbers from both arrays numbers and userIds into a newly created array named `oddCollection`
-
+function odd(collection){
+  let oddCollection= [];
+  for(let i=0;i<collection.length;i++){
+  if(collection[i] % 2 != 0){
+    oddCollection.push(collection[i]);
+  }
+}
+return oddCollection;
+}
+console.log(odd(collection));
+let oddCollection =odd(collection);
+console.log(oddCollection);
+/*
+function evenno(x){
+  for(let i=0;i<x.length;i++){
+    if(x[i] % 2 == 0){
+    x[i]='even ${x[i]}';
+   }    
+  }
+}
+even(collection);
+let evennos =console.log(even(collection));
+*/ 
 /*
   @param means parameter
 
@@ -23,11 +57,26 @@ let userIds = [1230, 234, 1278, 984, 763, 900];
     times(0); // []
     times(5); // ['test', 'test', 'test', 'test', 'test']
 */
-
-function times() {
-  // Your code
+/*
+function times(num,str){  
+  const arra =[];
+  for(let i=0;i<=num;i++){
+    arra.push(str);
+  }
+  return arra;
 }
+console.log(times(5,'c'));
 
+*/
+function times(num){
+  const test = 'test';
+  const arra =[];
+  for(let i=0;i<=num;i++){
+    arra.push(test);
+  }
+  return arra;
+}
+console.log(times(5));
 // Uncomment the code below and test the output
 
 // console.log(times(5, 'c')); // ['c', 'c', 'c', 'c', 'c']
@@ -93,10 +142,23 @@ function clear() {
     arrayToObj(['Ryan', 'John']); // {0: 'Ryan', 1: 'John'}
 */
 
-function arrayToObj() {
-  // your code
+function arrayToObj(arraya) {   
+  const obj ={};
+  for(let i=0;i< arraya.length;i++){
+    obj[i] = arraya[i];
+  }
+  return obj; 
 }
-
+console.log(arrayToObj([1, 2, 3, 4]));
+/*
+function arrayToObj(arraya) {   
+  const obj ={};
+  for(let i=0;i< arraya.length;i++){
+    obj[i] = `${i} : ${arraya[i]}`;
+  }
+  return obj; 
+}
+console.log(arrayToObj([1, 2, 3, 4])); */
 // Uncomment the code below and test the output
 // console.log(arrayToObj([1, 2, 3, 4])); // {0: 1, 1: 2, 2: 3, 3: 4}
 // console.log(arrayToObj(['a', undefined, 'd'])); // {0: 'a', 1: undefined, 2: 'd'}
