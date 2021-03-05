@@ -13,13 +13,13 @@ Answer the following with reason after going through the above code:
 
 - `[10] === [10]`
 - What is the value of obj? // answer
-- `obj == newObj`
-- `obj === newObj`
-- `user === newObj`
-- `user == newObj`
-- `user == obj`
-- `arr == arr2`
-- `arr === arr2`
+- `obj == newObj`//false,both are objects and having different address in memory
+- `obj === newObj`//false,both are objects and having different address in memory
+- `user === newObj`//false,both are objects and having different address in memory
+- `user == newObj`//false,both are objects and having different address in memory
+- `user == obj`//true,both are objects and having same address in memory
+- `arr == arr2`//true,same address and array
+- `arr === arr2`//true,same address and array
 
 2. What's will be the value of `person1` and `person2` ? Explain with reason. Draw the memory representation diagram.
 
@@ -46,6 +46,6 @@ var user = {
 };
 user.brothers = brothers;
 brothers.push('Robb');
-console.log(user.brothers === brothers); //1. output
-console.log(user.brothers.length === brothers.length); //2. output
+console.log(user.brothers === brothers); //1. output//false
+console.log(user.brothers.length === brothers.length); //2. output//false
 ```
