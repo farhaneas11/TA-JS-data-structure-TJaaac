@@ -8,14 +8,14 @@ const person = {
 
 let person2 = person;
 
-person.firstName = 'Arya';
+person.firstName = 'Arya';//mutation happens.
 
-console.log(person2.firstName); // output
-console.log(person.firstName); // output
-console.log(person.lastName); // output
-console.log(person == person2); // output
-console.log(person === person2); // output
-console.log(person.lastName === person2.lastName); // output
+console.log(person2.firstName); // output//arya{value has been changed into arya}
+console.log(person.firstName); // output//arya
+console.log(person.lastName); // output//undefined
+console.log(person == person2); // output//true
+console.log(person === person2); // output//true
+console.log(person.lastName === person2.lastName); // output//true
 ```
 
 2. Write the output with reason:
@@ -37,23 +37,23 @@ let personTwo = { ...person };
 person.firstName = 'Arya';
 person.city = 'Navada';
 
-console.log(personTwo.firstName); // output
-console.log(person.firstName); // output
-console.log(personTwo.lastName); // output
-console.log(person.firstName === personTwo.firstName); // output
-console.log(person == personTwo); // output
-console.log(person === personTwo); // output
-console.log(person.address === personTwo.address); // output
-console.log(person.address == personTwo.address); // output
-console.log(personTwo.address.city); // output
-console.log(person.address.city); // output
-console.log(person.address.city == personTwo.address.city); // output
+console.log(personTwo.firstName); // output//john{clonnig happens here.so when the  value firstname is changed it doesnt change in persontwo}
+console.log(person.firstName); // output//arya
+console.log(personTwo.lastName); // output//doe
+console.log(person.firstName === personTwo.firstName); // output//false
+console.log(person == personTwo); // output//false
+console.log(person === personTwo); // output//false
+console.log(person.address === personTwo.address); // output//false
+console.log(person.address == personTwo.address); // output//false
+console.log(personTwo.address.city); // output//san jose
+console.log(person.address.city); // output//navada
+console.log(person.address.city == personTwo.address.city); // output//false
 ```
 
 3. Write the output with reason:
 
 ```js
-let person = {
+let persona = {
   firstName: 'John',
   lastName: 'Doe',
   address: {
@@ -64,22 +64,22 @@ let person = {
   },
 };
 
-let personTwo = { ...person, address: { ...person.address } };
+let personTwoo = { ...person, address: { ...person.address } };
 
-person.firstName = 'Arya';
-person.city = 'Navada';
+persona.firstName = 'Arya';
+persona.city = 'Navada';
 
-console.log(personTwo.firstName); // output
-console.log(person.firstName); // output
-console.log(personTwo.lastName); // output
-console.log(person.firstName === personTwo.firstName); // output
-console.log(person == personTwo); // output
-console.log(person === personTwo); // output
-console.log(person.address === personTwo.address); // output
-console.log(person.address == personTwo.address); // output
-console.log(personTwo.address.city); // output
-console.log(person.address.city); // output
-console.log(person.address.city == personTwo.address.city); // output
+console.log(personTwo.firstName); // output//arya
+console.log(person.firstName); // output//arya
+console.log(personTwo.lastName); // output//doe
+console.log(person.firstName === personTwo.firstName); // output//true
+console.log(person == personTwo); // output//true
+console.log(person === personTwo); // output//true
+console.log(person.address === personTwo.address); // output//true
+console.log(person.address == personTwo.address); // output//true
+console.log(personTwo.address.city); // output//navada
+console.log(person.address.city); // output//navada
+console.log(person.address.city == personTwo.address.city); // output//true
 ```
 
 4. Clone the `blogs` variable into a new variable named `clonedBlogs`
@@ -102,7 +102,7 @@ let blogs = [
     body: 'My third blog post',
   },
 ];
-
+let clonedBlogs = {...blogs};
 // Your code goes here
 ```
 
@@ -127,7 +127,7 @@ var questions = [
     ],
   },
 ];
-
+let questionClone = {...questions};
 // Your code goes here
 ```
 
@@ -154,7 +154,7 @@ var allBlogs = {
     },
   ],
 };
-
+let allBlogsClone ={...allBlogs,comments:{...allBlogs.comments}};
 // Your code goes here
 ```
 
@@ -187,15 +187,17 @@ let person = [
     },
   },
 ];
-
+let clonedPerson = {...person,input:{...person.input},output:{...person.output}};
 // Your code goes here
 ```
 
 8. Write a function named `cloneObject` that accepts an object and returns the clone of the object
 
 ```js
-function cloneObject() {
-  // your code
+function cloneObject(object) {
+  for ( let i=0;i<object.length;i++){
+    return {...object};
+  }
 }
 
 // Run the test below to check your function
